@@ -8,20 +8,20 @@
 
 @layer base {
 	body {
-		@apply bg-slate-50 text-neutral-900;
+		@apply bg-slate-50 text-neutral-900 min-h-full;
 	}
 }
 
 @layer components {
 	.btn {
 		text-decoration: none;
-		@apply text-slate-50 bg-violet-700 font-bold rounded-2xl border-0 py-2.5 px-5;
+		@apply w-full text-slate-50 bg-violet-700 font-bold rounded-2xl border-0 py-2.5 px-5;
 	}
 }
 
 @layer utilities {
 	.container {
-		@apply w-11/12 max-w-[960px] mx-auto my-20 rounded-2xl bg-slate-50;
+		@apply w-11/12 max-w-[960px] mx-auto;
 	}
 
 	.error {

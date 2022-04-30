@@ -2,4 +2,8 @@
 	<router-view />
 </template>
 
-<style></style>
+<style>
+#app {
+	min-height: 100%;
+}
+</style>

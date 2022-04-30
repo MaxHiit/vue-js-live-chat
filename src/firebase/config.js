@@ -18,6 +18,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const timestamp = () => Timestamp.now();
 
-console.log(timestamp);
-
 export { db, timestamp };
