@@ -1,10 +1,12 @@
 <template>
-	<h1 class="text-3xl font-bold underline">Hello World</h1>
+	<div class="container">
+		<h1>Welcome</h1>
+	</div>
 </template>
 
 <script>
 export default {
-	name: 'HomeView',
+	name: 'Welcome',
 	components: {}
 };
 </script>
