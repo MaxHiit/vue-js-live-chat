@@ -3,25 +3,34 @@
 		<input type="text" v-model="displayName" required placeholder="enter your name" />
 		<input type="email" v-model="email" required placeholder="enter your email" />
 		<input type="password" v-model="password" required placeholder="enter your password" />
+		<div class="text-violet-500">{{ error }}</div>
 		<button class="btn">Sign Up</button>
 	</form>
 </template>
 
 <script>
 import { ref } from 'vue';
+import useAuth from '@/composables/useAuth';
 
 export default {
 	name: 'SignupForm',
-	setup() {
+	setup(props, context) {
+		const { error, signup } = useAuth();
+
+		// refs
 		const displayName = ref('');
 		const email = ref('');
 		const password = ref('');
 
-		const handleSubmit = () => {
-			console.log(displayName.value, email.value, password.value);
+		const handleSubmit = async () => {
+			await signup(email.value, password.value, displayName.value);
+			if (!error.value) {
+				context.emit('signup');
+				console.log('user sign up');
+			}
 		};
 
-		return { handleSubmit, displayName, email, password };
+		return { handleSubmit, displayName, email, password, error };
 	}
 };
 </script>
