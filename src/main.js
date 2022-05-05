@@ -3,4 +3,13 @@ import App from './App.vue';
 import router from './router';
 import './index.css';
 
-createApp(App).use(router).mount('#app');
+// import firebase auth service
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '@/firebase/config';
+
+let app;
+onAuthStateChanged(auth, () => {
+	if (!app) {
+		app = createApp(App).use(router).mount('#app');
+	}
+});
