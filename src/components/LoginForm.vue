@@ -2,7 +2,7 @@
 	<form @submit.prevent="handleSubmit">
 		<input type="email" v-model="email" required placeholder="enter your email" />
 		<input type="password" v-model="password" required placeholder="enter your password" />
-		<div>{{ error }}</div>
+		<div class="error">{{ error }}</div>
 		<button class="btn">Sign In</button>
 	</form>
 </template>
@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
 	width: 300px;
 	margin: 20px auto;

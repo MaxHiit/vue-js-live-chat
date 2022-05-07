@@ -1,8 +1,18 @@
 <template>
 	<div class="container">
-		<h1>Welcome</h1>
-
-		<div class="flex flex-row gap gap-8">
+		<Logo />
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et voluptatum eaque, debitis
+			dolorum laborum voluptas voluptates rerum neque quo eveniet tempora consequatur perspiciatis
+			eligendi, culpa architecto, asperiores similique repudiandae? Ab aspernatur repellendus
+			repudiandae, eligendi autem esse facilis voluptate ipsa saepe doloribus, expedita ullam dolore
+			eos officia deserunt placeat, reiciendis labore. Corrupti modi aut quidem porro quia beatae.
+			Tempore architecto aspernatur reiciendis esse, dicta consequuntur aliquid libero, quas hic
+			suscipit aut, animi nemo dignissimos exercitationem accusamus atque. Architecto cumque temporibus
+			perspiciatis deserunt laborum! Deserunt, aliquam amet? Eum consequuntur, velit debitis, nesciunt
+			nostrum architecto vel iusto odio rerum facilis, eius quibusdam.
+		</p>
+		<div class="flex flex-row gap-8">
 			<transition
 				appear
 				@before-enter="beforeEnterOpacity"
@@ -36,10 +46,10 @@
 			</transition>
 			<transition appear @before-enter="beforeEnterScale" @enter="enterScale">
 				<template v-if="showLogin">
-					<img class="w-6/12" alt="Vue logo" src="../assets/image-login.png" />
+					<img class="w-6/12 rounded-lg" alt="Vue logo" src="../assets/image-login.png" />
 				</template>
 				<template v-else>
-					<img class="w-6/12" alt="Vue logo" src="../assets/image-login.png" />
+					<img class="w-6/12 rounded-lg" alt="Vue logo" src="../assets/image-login.png" />
 				</template>
 			</transition>
 		</div>
@@ -49,13 +59,15 @@
 <script>
 import { ref } from 'vue';
 import gsap from 'gsap';
-import SignupForm from '@/components/SingupForm.vue';
+import Logo from '@/components/Logo.vue';
+import SignupForm from '@/components/SignupForm.vue';
 import LoginForm from '@/components/LoginForm.vue';
 import { useRouter } from 'vue-router';
 
 export default {
 	name: 'Welcome',
 	components: {
+		Logo,
 		SignupForm,
 		LoginForm
 	},

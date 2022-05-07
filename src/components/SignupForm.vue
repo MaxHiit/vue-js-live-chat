@@ -3,7 +3,7 @@
 		<input type="text" v-model="displayName" required placeholder="enter your name" />
 		<input type="email" v-model="email" required placeholder="enter your email" />
 		<input type="password" v-model="password" required placeholder="enter your password" />
-		<div class="text-violet-500">{{ error }}</div>
+		<div class="error">{{ error }}</div>
 		<button class="btn">Sign Up</button>
 	</form>
 </template>
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
 	width: 300px;
 	margin: 20px auto;

@@ -1,5 +1,5 @@
 <template>
-	<nav v-if="user" class="flex justify-between items-center p-5 border-b-2 border-violet-500">
+	<nav v-if="user" class="flex justify-between items-center rounded-t-lg p-5 bg-violet-200">
 		<div>
 			<p>Hey {{ user.displayName }}</p>
 			<p>Currently logged in as {{ user.email }}</p>
