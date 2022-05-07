@@ -21,10 +21,10 @@
 
 @layer utilities {
 	.container {
-		@apply w-11/12 max-w-[960px] mx-auto;
+		@apply w-11/12 max-w-[960px] m-auto;
 	}
 
 	.error {
-		@apply text-rose-400 text-sm;
+		@apply text-violet-500 text-sm;
 	}
 }
