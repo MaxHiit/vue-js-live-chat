@@ -10,6 +10,11 @@
 	body {
 		@apply bg-slate-50 text-neutral-900 min-h-full;
 	}
+
+	img,
+	svg {
+		@apply w-full h-full;
+	}
 }
 
 @layer components {
@@ -26,5 +31,9 @@
 
 	.error {
 		@apply text-violet-500 text-sm;
+	}
+
+	.svg-wrapper {
+		height: 200px;
 	}
 }
