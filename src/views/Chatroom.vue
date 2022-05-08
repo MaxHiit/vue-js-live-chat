@@ -22,7 +22,6 @@ export default {
 		const router = useRouter();
 
 		watch(user, () => {
-			console.log(user);
 			if (!user.value) {
 				router.push({ name: 'Welcome' });
 			}
