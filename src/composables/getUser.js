@@ -4,8 +4,8 @@ import { ref } from 'vue';
 
 const user = ref(auth.currentUser);
 
+// listen if the user has changed
 onAuthStateChanged(auth, (_user) => {
-	console.log('User state change. Current user is: ', _user);
 	user.value = _user;
 });
 
