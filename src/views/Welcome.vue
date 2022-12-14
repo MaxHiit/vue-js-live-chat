@@ -1,26 +1,26 @@
 <template>
 	<div class="container">
 		<Logo />
-		<h1 class="text-center text-xl my-10">
+		<h1 class="text-center text-xl my-6">
 			Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor.
 			Surprise me!
 		</h1>
-		<div class="flex flex-row gap-8 h-[310px]">
+		<div class="flex flex-col lg:flex-row gap-8 h-full lg:h-[310px]">
 			<transition
 				appear
 				@before-enter="formAnimationBeforeEnter"
 				@enter="formAnimationEnter"
 				:css="false"
 			>
-				<div v-if="showLogin" class="w-6/12">
+				<div v-if="showLogin" class="w-full lg:w-6/12 order-2 lg:order-1">
 					<LoginForm @login="enterChat" />
 				</div>
-				<div v-else class="w-6/12">
+				<div v-else class="w-full lg:w-6/12 order-2 lg:order-1">
 					<SignupForm @signup="enterChat" />
 				</div>
 			</transition>
 
-			<div v-if="showLogin" class="w-6/12 flex flex-col items-center">
+			<div v-if="showLogin" class="w-full lg:w-6/12 order-1 lg:order-2 flex flex-col items-center">
 				<LoginLogo />
 				<p class="text-center">
 					No account yet?
@@ -30,7 +30,10 @@
 					instead
 				</p>
 			</div>
-			<div v-else class="w-6/12 flex flex-col justify-center items-center">
+			<div
+				v-else
+				class="w-full lg:w-6/12 order-1 lg:order-2 flex flex-col items-center justify-center"
+			>
 				<SignupLogo />
 				<p class="text-center">
 					Already registered?
